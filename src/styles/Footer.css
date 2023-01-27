@@ -1,0 +1,10 @@
+.footer {
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: #1976d2;
+    position:absolute;
+    bottom: -150px;
+}
+.label-send {
+    margin-top: 20px;
+}
