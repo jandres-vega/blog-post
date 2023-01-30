@@ -11,6 +11,24 @@ import {Link} from 'react-router-dom';
 import {Button, List, ListItem, ListItemButton, ListItemText} from "@mui/material";
 import {authContext} from "../context/authContext";
 
+const optionButtons = [
+    {
+        option: 'Todos los posts',
+        to: '/posts',
+    },
+    {
+        option: 'Mis posts',
+        to: '/posts',
+    },
+    {
+        option: 'Mis posts',
+        to: '/posts',
+    },
+    {
+        option: 'Contactenos',
+        to: '/posts',
+    }
+]
 
 const Header = () => {
 
@@ -51,23 +69,15 @@ const Header = () => {
                     <Container maxWidth="xl" sx={{width: '50%'}}>
                         <Toolbar disableGutters>
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent: 'flex-start' }}>
-                                <Button
-                                    onClick={handleClick}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >Todos Los posts
-                                </Button>
-                                <Button
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >Mis posts
-                                </Button>
-                                <Button
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >Realiza un post
-                                </Button>
-                                <Button
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >Contactenos
-                                </Button>
+                                {
+                                    optionButtons.map(item => (
+                                        <Button
+                                            onClick={handleClick}
+                                            sx={{ my: 2, color: 'white', display: 'block' }}
+                                        >{item.option}
+                                        </Button>
+                                    ))
+                                }
                             </Box>
                         </Toolbar>
                     </Container>

@@ -60,7 +60,7 @@ const LoginUser = () => {
     }
 
     const handleClickShowPassword = () => {
-        setShowPassword(true)
+        setShowPassword(!showPassword)
     }
     return (
         <AuthRoute>
