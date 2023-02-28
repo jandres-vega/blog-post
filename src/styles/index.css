@@ -1,4 +1,7 @@
 body {
     margin: 0;
     overflow-y: visible;
+    position: relative;
+    padding-bottom: 2rem;
+    min-height: 100vh;
 }

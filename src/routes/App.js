@@ -4,9 +4,12 @@ import {Layout} from "../containers/Layout";
 import {Home} from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import Posts from "../pages/Posts";
 import {AuthProvider} from "../context/authContext";
 import ProtectedRoute from "../components/ProtectedRoute";
+import FormPost from "../pages/FormPost";
+import MyPosts from "../pages/MyPosts";
+import AllPosts from "../pages/AllPosts";
+import NotFound from "../pages/NotFound";
 
 function App() {
   return (
@@ -17,10 +20,12 @@ function App() {
                     <Route exaxt path="/" element={<Home />} />
                     <Route exact path="/register" element={<Register />} />
                     <Route exact path="/login" element={<Login />} />
-                    <Route element={<ProtectedRoute />}>
-                        <Route exact path="/posts" element={<Posts />} />
+                    <Route  element={<ProtectedRoute />}>
+                        <Route exact path="/create-post" element={<FormPost />} />
+                        <Route exact path="/my-posts" element={<MyPosts />} />
+                        <Route exact path="/all-posts" element={<AllPosts />} />
                     </Route>
-                    <Route path="*" element={<h1> Not Found </h1> } />
+                    <Route path="*" element={<NotFound /> } />
                 </Routes>
             </Layout>
         </AuthProvider>

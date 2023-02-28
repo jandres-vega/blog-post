@@ -14,19 +14,19 @@ import {authContext} from "../context/authContext";
 const optionButtons = [
     {
         option: 'Todos los posts',
-        to: '/posts',
+        to: '/all-posts',
     },
     {
         option: 'Mis posts',
-        to: '/posts',
+        to: '/my-posts',
     },
     {
-        option: 'Mis posts',
-        to: '/posts',
+        option: 'crear post',
+        to: '/create-post',
     },
     {
         option: 'Contactenos',
-        to: '/posts',
+        to: '',
     }
 ]
 
@@ -71,11 +71,13 @@ const Header = () => {
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent: 'flex-start' }}>
                                 {
                                     optionButtons.map(item => (
-                                        <Button
-                                            onClick={handleClick}
-                                            sx={{ my: 2, color: 'white', display: 'block' }}
-                                        >{item.option}
-                                        </Button>
+                                        <Link to={item.to} key={item.option} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                                            <Button
+                                                onClick={handleClick}
+                                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                            >{item.option}
+                                            </Button>
+                                        </Link>
                                     ))
                                 }
                             </Box>

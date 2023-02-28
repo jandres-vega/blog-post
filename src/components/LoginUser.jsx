@@ -31,7 +31,7 @@ const LoginUser = () => {
     const handleLogin = async() => {
         try {
             await loginUser(user.email, user.password);
-            navigate('/posts')
+            navigate('/my-posts')
 
         }catch (e) {
             console.log(e.code)

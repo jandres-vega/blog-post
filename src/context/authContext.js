@@ -34,7 +34,7 @@ const AuthProvider = ({children}) => {
     const AuthRoute = ({children}) => {
 
         if (currentUser){
-            return <Navigate to="/posts" />
+            return <Navigate to="/my-posts" />
         }
         return (
             <>
